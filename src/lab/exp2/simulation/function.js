@@ -20,7 +20,7 @@ window.view = {
 		this.addTouchEvent('imageSquare', function() { view.showSquareInputs() })
 		this.addClickEvent('okSquare', function() { view.validateSquareInputs() })
 		this.addClickEvent('imageRectangle', function() { view.showRectangleInputs() })
-		this.addClickEvent('okRectangle', function() { view.validateRectangleInputs() })
+		this.addClickEvent('okRighttriangle', function() { view.validateRighttriangleInputs() })
 		this.addClickEvent('imageTriangle', function() { view.showTriangleInputs() })
 		this.addClickEvent('okTriangle', function() { view.validateTriangleInputs() })
 		this.addClickEvent('imageCircle', function() { view.showCircleInputs() })
@@ -48,7 +48,7 @@ window.view = {
         this.hideInstructions()
 		this.unCheckRadioButtons()
 	},
-	showRectangleInputs: function() {
+	showRighttriangleInputs: function() {
 		this.hideQuestionBlock('questionSquare', 'imageSquare')
 		this.hideQuestionBlock('questionCircle', 'imageCircle')
 		this.hideQuestionBlock('questionTriangle', 'imageTriangle')
@@ -72,8 +72,8 @@ window.view = {
         this.hideInstructions()
 		this.unCheckRadioButtons()
 	},
-	approveRectangleInputs: function() {
-		this.displayFunctionForRectangle()
+	approveRighttriangleInputs: function() {
+		this.displayFunctionForRighttriangle()
         this.showInstructions()
 		document.getElementById('questionRectangle').className = 'questionBlock hide'
 		document.getElementById('imageRectangle').className += ' disabledImage'
@@ -150,7 +150,7 @@ window.view = {
 		else
 			this.approveSquareInputs()
 	}, 
-	validateRectangleInputs: function() {
+	validateRighttriangleInputs: function() {
 		var options1, options2, options3, options4
 		var a, b, c, d
 		options1 = document.getElementsByName('radio_group5')
@@ -267,8 +267,8 @@ window.view = {
 	displayFunctionForSquare: function() {
 		document.getElementById('functionSquare').innerHTML += 'float area_sq (float a)<br>{<br> &emsp; float area = a*a;<br>&emsp; return area;<br>}'
 	},
-	displayFunctionForRectangle: function() {
-		document.getElementById('functionRectangle').innerHTML += 'float area_rect (float a,float b)<br>{<br> &emsp; float area = a*b;<br> &emsp; return area;<br>}'
+	displayFunctionForRighttriangle: function() {
+		document.getElementById('functionRectangle').innerHTML += 'float area_rect (float a,float b)<br>{<br> &emsp; float area = (1/2)*a*b;<br> &emsp; return area;<br>}'
 	},
 	displayFunctionForTriangle: function() {
 		document.getElementById('functionTriangle').innerHTML += 'float area_triangle (float a)<br>{<br>&emsp;float area = (sqrt(3)/4.0)*a*a;<br>&emsp;return area;<br>}'
@@ -337,7 +337,7 @@ window.view = {
 		document.getElementById('tickCircle').className = 'tick hide'
 		document.getElementById('tickTriangle').className = 'tick hide'
 		document.getElementById('functionSquare').innerHTML = ''
-		document.getElementById('functionRectangle').innerHTML = ''
+		document.getElementById('functionRighttriangle').innerHTML = ''
 		document.getElementById('functionCircle').innerHTML = ''
 		document.getElementById('functionTriangle').innerHTML = ''
         document.getElementById('instructions').className = 'questionBlock'
