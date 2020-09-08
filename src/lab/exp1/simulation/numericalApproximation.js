@@ -205,7 +205,7 @@ window.view = {
 	// drawVerticalLine: shows vertical lines on canvas.
 	drawVerticalLine: function () {
 		this.canvasContext.beginPath();
-		for (var position = 55; position <= 420; position += 35) {
+		for (var position = 55; position <= 420; position += ) {
 			this.canvasContext.moveTo(position, 0); // 0 or 360 are y-coordinate value and position is x-coordinate value where verticalline to be display.
 			this.canvasContext.lineTo(position, 360);
 		}
